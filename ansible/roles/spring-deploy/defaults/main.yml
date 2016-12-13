@@ -1,7 +1,7 @@
 ---
 spring_home: /opt/springboot-first
 
-nexus_url: http://localhost:8081/
+nexus_url: http://511acd5b.ngrok.io/
 nexus_repository: snapshots
 nexus_group_id: com.example
 nexus_artifact_id: springboot-first
