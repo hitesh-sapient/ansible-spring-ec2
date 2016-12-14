@@ -1,5 +1,5 @@
 ---
-spring_home: /opt/springboot-first
+spring_home: /opt/springboot-first1
 
 nexus_url: http://511acd5b.ngrok.io
 nexus_repository: snapshots

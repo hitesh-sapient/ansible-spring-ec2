@@ -11,7 +11,7 @@
   file: path=/opt/springboot state=directory
 
 - name: Creates directory
-  file: path=/opt/springboot-first state=directory
+  file: path={{ spring_home }} state=directory
 
 - name: download spring artifact from nexus
   get_url:
