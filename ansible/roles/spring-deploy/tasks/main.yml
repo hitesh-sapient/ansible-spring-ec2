@@ -32,7 +32,7 @@
   when: is_service_installed | default (False) | bool
 
 - name: install springboot-first
-  command: mv /opt/springboot/springboot-first.jar {{ spring_home }}/springboot-first.jar
+  command: mv /opt/springboot/springboot-first.jar {{ spring_home }}/
 
 - name: setup springboot app
   file:
