@@ -26,7 +26,7 @@
 
 - name: setup springboot app
   file:
-    src: "/springboot-first.jar"
+    src: "/springboot-first-1.0-20161212.170112-4.jar"
     dest: "{{ service_path }}"
     state: link
 
