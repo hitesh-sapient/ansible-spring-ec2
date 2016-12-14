@@ -13,6 +13,9 @@
 - name: Creates directory
   file: path={{ spring_home }} state=directory
 
+- name: Creates directory
+  file: path={{ service_path }} state=directory
+
 - name: download spring artifact from nexus
   get_url:
     url: "{{ nexus_url }}/nexus/content/repositories/{{ nexus_repository }}/{{ nexus_group_id }}/{{ nexus_artifact_id }}/{{nexus_version}}"
