@@ -31,7 +31,7 @@
   when: jar_dir.stat.exists == False
 
 - name: rename the services
-  command: mv /opt/springboot/springboot-first-1.0-20161212.170112-4.jar /opt/springboot/springboot-first.jar
+  command: mv /tmp/springboot-first-1.0-20161212.170112-4.jar /opt/springboot/springboot-first.jar
 
 - name: stop springboot app
   service: name=springboot-first state=stopped
