@@ -14,6 +14,13 @@
     url_username: admin
     url_password: admin123
 
+- name: Check jar existence
+  stat: path=/springboot-first-1.0-20161212.170112-4.jar
+  register: jar_dir
+
+- fail: msg="jar not found"
+  when: jar_dir.stat.exists == False
+
 - name: rename the services
   command: mv /springboot-first-1.0-20161212.170112-4.jar /springboot-first.jar
 
@@ -22,11 +29,11 @@
   when: is_service_installed | default (False) | bool
 
 - name: install springboot-first
-  command: mv /springboot-first.jar {{ spring_home }}
+  command: mv /springboot-first.jar {{ home_path }}
 
 - name: setup springboot app
   file:
-    src: "/springboot-first-1.0-20161212.170112-4.jar"
+    src: "{{ home_path }}/springboot-first.jar"
     dest: "{{ service_path }}"
     state: link
 
