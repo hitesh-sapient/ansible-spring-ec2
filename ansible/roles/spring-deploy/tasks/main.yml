@@ -10,6 +10,10 @@
 - name: Creates directory
   file: path=/opt/springboot state=directory
 
+  - name: Creates directory
+    file: path=/opt/springboot-first state=directory
+
+
 - name: download spring artifact from nexus
   get_url:
     url: "{{ nexus_url }}/nexus/content/repositories/{{ nexus_repository }}/{{ nexus_group_id }}/{{ nexus_artifact_id }}/{{nexus_version}}"
@@ -32,7 +36,7 @@
   when: is_service_installed | default (False) | bool
 
 - name: install springboot-first
-  command: mv /opt/springboot/springboot-first.jar {{ spring_home }}/
+  command: mv /opt/springboot/springboot-first.jar {{ spring_home }}
 
 - name: setup springboot app
   file:
