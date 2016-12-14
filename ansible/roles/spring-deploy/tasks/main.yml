@@ -10,7 +10,7 @@
 - name: Creates directory
   file: path=/opt/springboot state=directory
 
-  - name: Creates directory
+- name: Creates directory
     file: path=/opt/springboot-first state=directory
 
 
