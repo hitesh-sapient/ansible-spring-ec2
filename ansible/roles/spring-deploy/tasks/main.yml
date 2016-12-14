@@ -10,12 +10,12 @@
 - name: download spring artifact from nexus
   get_url:
     url: "{{ nexus_url }}/nexus/content/repositories/{{ nexus_repository }}/{{ nexus_group_id }}/{{ nexus_artifact_id }}/{{nexus_version}}"
-    dest: /springboot-first-1.0-20161212.170112-4.jar
+    dest: /opt/springboot/springboot-first-1.0-20161212.170112-4.jar
     url_username: admin
     url_password: admin123
 
 - name: Check jar existence
-  stat: path=/springboot-first-1.0-20161212.170112-4.jar
+  stat: path=/opt/springboot
   register: jar_dir
 
 - fail: msg="jar not found"
