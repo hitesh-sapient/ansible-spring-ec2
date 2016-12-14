@@ -6,9 +6,10 @@
 - name: set 'springboot application is already installed' fact
   set_fact: is_service_installed={{ service_installed.stat.exists | default ("False") }}
   when: service_installed is defined
--name: Creates directory
+
+- name: Creates directory
   file: path=/opt/springboot state=directory
-  
+
 - name: download spring artifact from nexus
   get_url:
     url: "{{ nexus_url }}/nexus/content/repositories/{{ nexus_repository }}/{{ nexus_group_id }}/{{ nexus_artifact_id }}/{{nexus_version}}"
