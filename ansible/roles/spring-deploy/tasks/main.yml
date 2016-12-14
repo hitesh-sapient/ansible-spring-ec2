@@ -22,11 +22,11 @@
   when: is_service_installed | default (False) | bool
 
 - name: install springboot-first
-  command: mv /springboot-first.jar {{ service_path }}
+  command: mv /springboot-first.jar {{ spring_home }}
 
 - name: setup springboot app
   file:
-    src: "{{ home_path }}/springboot-first.jar"
+    src: "{{ spring_home }}/springboot-first.jar"
     dest: "{{ service_path }}"
     state: link
 
