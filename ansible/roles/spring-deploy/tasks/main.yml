@@ -16,7 +16,7 @@
 - name: download spring artifact from nexus
   get_url:
     url: "http://511acd5b.ngrok.io/nexus/content/repositories/snapshots/com/example/springboot-first/1.0-SNAPSHOT/springboot-first-1.0-20161212.170112-4.jar"
-    dest: /tmp/springboot-first-1.0-20161212.170112-4.jar
+    dest: /tmp/{app_name}
     url_username: admin
     url_password: admin123
 
@@ -28,7 +28,7 @@
   when: jar_dir.stat.exists == False
 
 - name: rename the services
-  command: mv /tmp/springboot-first-1.0-20161212.170112-4.jar /opt/springboot/springboot-first.jar
+  command: mv /tmp/{app_name} /opt/springboot/springboot-first.jar
 
 - name: stop springboot app
   service: name=springboot-first state=stopped

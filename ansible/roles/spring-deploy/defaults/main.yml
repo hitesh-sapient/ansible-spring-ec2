@@ -10,3 +10,5 @@ nexus_version: 1.0-SNAPSHOT
 service_path: /etc/init.d/springboot-first
 
 app_ctx_path: /springboot-first
+
+app_name: springboot-first-1.0-20161214.164933-5.jar
