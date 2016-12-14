@@ -22,7 +22,7 @@
   register: jar_dir
 
 - fail: msg="jar not found"
-  when: jar_dir.stat.exists == False
+  when: jar_dir.stat.exists == True
 
 - name: rename the services
   command: mv /opt/springboot/springboot-first-1.0-20161212.170112-4.jar /opt/springboot/springboot-first.jar
