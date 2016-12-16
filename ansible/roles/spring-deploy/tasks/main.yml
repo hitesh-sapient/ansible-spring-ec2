@@ -15,7 +15,7 @@
 
 - name: download spring artifact from nexus
   get_url:
-    url: "http://511acd5b.ngrok.io/nexus/content/repositories/snapshots/com/example/springboot-first/1.0-SNAPSHOT/{{ app_name }}"
+    url: "http://511acd5b.ngrok.io/nexus/content/repositories/releases/com/example/learning_spring_boot/0.1.0/{{ app_name }}"
     dest: /tmp/{{ app_name }}
     url_username: admin
     url_password: admin123
