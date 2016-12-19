@@ -37,6 +37,9 @@
 - name: install springboot-first
   command: mv /opt/springboot/springboot-first.jar {{ spring_home }}
 
+- name: make springboot-first runnable
+  file: name=/opt/springboot-first1/springboot-first.jar state=file mode="0755"
+
 - name: setup springboot app
   file:
     src: "{{ spring_home }}/springboot-first.jar"
